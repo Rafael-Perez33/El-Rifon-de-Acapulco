@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Botones Seleccionables</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/sorteo.css">
+</head>
+<body>
+	
+  <header>
+		<h1 id="titulo">SORTEO</h1>
+	</header>
+	<main>
+		<section class="galeria">
+			<img src="Rifas/Tablet A7(1).jpeg" alt="Imagen 1">
+			<img src="Rifas/Tablet A7(16).jpeg" alt="Imagen 2">
+			<img src="Rifas/Tablet A7(14).jpeg" alt="Imagen 3">
+            <img src="Rifas/Tablet A7(2).jpeg" alt="Imagen 4">
+            <img src="Rifas/Tablet A7(9).jpeg" alt="Imagen 5">
+            <img src="Rifas/Tablet A7(10).jpeg" alt="Imagen 6">
+			<!-- Agrega más imágenes aquí -->
+		</section>
+	</main>
+  
+  
+  
+  <div class="container">
+		<div class="row" id="button-row">
+			<!-- Aquí se generan los botones -->
+		</div>
+		<div class="row mt-3">
+			<div class="col-md-12 text-center">
+				<button type="button" class="btn btn-primary" id="join-button">Unir Botones Seleccionados</button>
+			</div>
+		</div>
+	</div>
+
+	<!-- Modal de Formulario -->
+
+<div class="modal fade" id="formulario-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" >
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Formulario de Unión</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        
+        <div class="modal-body" >
+          <div class="form-group">
+            
+            <form id="formulario" action="https://api.whatsapp.com/send?phone=+527442083547&text=" method="POST" onsubmit="enviarFormulario(); return false;" >
+                <label for="nombre">Nombre:</label>
+            <input type="text" class="form-control" id="nombre" placeholder="Ingresa tu nombre" required>
+          </div>
+          <div class="form-group" >
+            <label for="estado">Estado:</label>
+            <select class="form-control" id="estado" required>
+               <option value="">Selecciona un estado</option>
+               <option value="Aguascalientes">Aguascalientes</option>
+               <option value="Baja-California">Baja California</option>
+               <option value="Baja-California-Sur">Baja California Sur</option>
+               <option value="Campeche">Campeche</option>
+               <option value="Coahuila-Zaragoza">Coahuila de Zaragoza</option>
+               <option value="Colima">Colima</option>
+               <option value="Chiapas">Chiapas</option>
+               <option value="Chihuahua">Chihuahua</option>
+               <option value="Ciudad-Mexico">Ciudad de México</option>
+               <option value="Durango">Durango</option>
+               <option value="Guanajuato">Guanajuato</option>
+               <option value="Guerrero">Guerrero</option>
+               <option value="Hidalgo">Hidalgo</option>
+               <option value="Jalisco">Jalisco</option>
+               <option value="México">México</option>
+               <option value="Michoacán">Michoacán de Ocampo</option>
+               <option value="Morelos">Morelos</option>
+               <option value="Nayarit">Nayarit</option>
+               <option value="Nuevo-Leon">Nuevo León</option>
+               <option value="Oaxaca">Oaxaca</option>
+               <option value="Puebla">Puebla</option>
+               <option value="Querétaro">Querétaro</option>
+               <option value="Quintana-Roo">Quintana Roo</option>
+               <option value="San-Luis-Potosi">San Luis Potosí</option>
+               <option value="Sinaloa">Sinaloa</option>
+               <option value="Sonora">Sonora</option>
+               <option value="Tabasco">Tabasco</option>
+               <option value="Tamaulipas">Tamaulipas</option>
+               <option value="Tlaxcala">Tlaxcala</option>
+               <option value="Veracruz">Veracruz de Ignacio de la Llave</option>
+               <option value="Yucatán">Yucatán</option>
+               <option value="Zacatecas">Zacatecas</option>
+            </select>
+          </div>
+          <div class="form-group" >
+            <label for="whatsapp">Número de WhatsApp:</label>
+            <input type="tel" class="form-control" id="whatsapp" placeholder="Ingresa tu número de WhatsApp (10 Digitos)" required pattern="[0-9]{10} ">
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+          <button type="submit" class="btn btn-primary" onclick="enviarFormulario()">Unir</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+	<script src="js/funcion2.js"></script>
+</body>
+</html>
