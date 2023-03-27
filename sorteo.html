@@ -25,12 +25,12 @@
   
   
   <div class="container">
-		<div class="row" id="button-row">
+		<div class="row" id="lista-btn">
 			<!-- Aquí se generan los botones -->
 		</div>
 		<div class="row mt-3">
 			<div class="col-md-12 text-center">
-				<button type="button" class="btn btn-primary" id="join-button">Unir Botones Seleccionados</button>
+				<button type="button" class="btn btn-primary" id="comprar">COMPRAR BOLETOS</button>
 			</div>
 		</div>
 	</div>
@@ -41,7 +41,9 @@
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Formulario de Unión</h5>
+          <h5 class="modal-title" id="exampleModalLabel">INGRESA TUS DATOS</h5>
+          <hr/>
+          <h5></h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
@@ -51,8 +53,13 @@
           <div class="form-group">
             
             <form id="formulario" action="https://api.whatsapp.com/send?phone=+527442083547&text=" method="POST" onsubmit="enviarFormulario(); return false;" >
-                <label for="nombre">Nombre:</label>
-            <input type="text" class="form-control" id="nombre" placeholder="Ingresa tu nombre" required>
+              <!--Datos del Usuario-->
+              <label for="nombre">Nombre:</label>
+           
+           
+                <input type="text" class="form-control" id="nombre" placeholder="Ingresa tu nombre" required>
+         
+         
           </div>
           <div class="form-group" >
             <label for="estado">Estado:</label>
@@ -92,14 +99,17 @@
                <option value="Zacatecas">Zacatecas</option>
             </select>
           </div>
+         
           <div class="form-group" >
             <label for="whatsapp">Número de WhatsApp:</label>
-            <input type="tel" class="form-control" id="whatsapp" placeholder="Ingresa tu número de WhatsApp (10 Digitos)" required pattern="[0-9]{10} ">
+            <input type="tel" class="form-control" id="whatsapp" placeholder="Ingresa tu Número de WhatsApp (10 Digitos) Sin Espacios" required pattern="[0-9]{10} ">
           </div>
         </div>
+      
+      
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-          <button type="submit" class="btn btn-primary" onclick="enviarFormulario()">Unir</button>
+          <button type="submit" class="btn btn-primary" onclick="enviarFormulario()">Comprar Boleto</button>
         </div>
       </div>
     </div>
@@ -110,5 +120,7 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 	<script src="js/funcion2.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+
 </body>
 </html>
