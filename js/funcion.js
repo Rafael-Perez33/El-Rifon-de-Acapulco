@@ -34,5 +34,5 @@ mostrarSlide(slideActual);
 const botonComprar = document.querySelector('.comprar');
 
 botonComprar.addEventListener('click', () => {
-  window.location.href = 'sorteos.html';
+  window.location.href = 'sorteo.html';
 });

@@ -35,15 +35,7 @@ body{
     transform: scale(1.2);
  }
       
- button {
-  background-color: #4287f5;
-  color: white;
-  font-size: 16px;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 5px;
-  margin: 5px;
-}
+ 
 
 button:hover {
   cursor: pointer;
@@ -55,6 +47,11 @@ button.seleccionado {
 }
 
 .btn {
-	background-color: #ff0000;
-	color: #ffffff;
+  background-color: #4287f5;
+  color: white;
+  font-size: 16px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  margin: 5px;
 }
