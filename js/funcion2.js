@@ -17,7 +17,7 @@ $(document).ready(function(){
       });
       console.log('Uniendo botones:', buttonValues);
 
-      // Aquí puedes agregar código para abrir el formulario
+      //  código para abrir el formulario
       $('#formulario-modal').modal('show');
     } else {
       alert('Selecciona al menos un Boleto.');
