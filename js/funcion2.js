@@ -18,7 +18,7 @@ $(document).ready(function(){
 	
 		$('#comprar').click(function(){
 			var selectedButtons = $('.btn.active');
-			if (selectedButtons.length > 1) {
+			if (selectedButtons.length > 0) {
 				var buttonValues = [];
 				selectedButtons.each(function(){
 					buttonValues.push($(this).text());
@@ -41,7 +41,7 @@ function enviarFormulario() {
    
 	var nombre = document.getElementById("nombre").value;
     var estado = document.getElementById("estado").value;
-    
+
 	var whatsapp = document.getElementById("whatsapp").value;
   
 	if(nombre==='' || estado==='' || whatsapp=== ''|| whatsapp <0 & whatsapp >10 )
@@ -51,33 +51,54 @@ function enviarFormulario() {
  
   else{
     // Creamos el mensaje que se enviará por defecto
-    var mensaje ="EL RIFON DE ACAPULCO " + "Hola " + nombre + "de " + estado + " Tu número de telefono es " + whatsapp ;
-  
+    var mensaje 
+	mensaje="EL RIFON DE ACAPULCO " + "Hola " + nombre + "de " + estado + " Tu número de telefono es " + whatsapp + " Tu numero de boleto es " ;
     // Redirigimos a la URL de WhatsApp con los parámetros necesarios
     window.location.href = "https://api.whatsapp.com/send?phone=+527442083547&text=" + encodeURIComponent(mensaje);
    buttonRow.disabled=true; 
   }
-    
-}
-// Guardar los botones seleccionados
-var botones_seleccionados = [];  // Inicializar la lista
-$(".btn").each(function() {
-  if ($(this).hasClass("active")) {
-    botones_seleccionados.push($(this).text());  // Agregar el valor del botón a la lista
-    $(this).prop("disabled", true);  // Desactivar el botón
-  }
-});
-localStorage.setItem("selectedButtons", JSON.stringify(botones_seleccionados));
+  var seleccion = [];
 
-// Recuperar los botones seleccionados
-var botones_guardados = localStorage.getItem("selectedButtons");
-if (botones_guardados) {
-  botones_seleccionados = JSON.parse(botones_guardados);
-  for (var i = 0; i < botones_seleccionados.length; i++) {
-    $(".btn").filter(function() {
-      return $(this).text() === botones_seleccionados[i];
-    }).addClass("active").prop("disabled", true);  // Marcar el botón como seleccionado y desactivarlo
+  // Obtener los botones de selección
+  var opciones = document.querySelectorAll('#nombre .estado input[type="checkbox"] #whatsapp');
+
+  // Guardar el estado de los botones de selección en un arreglo
+  for (var j = 0; i < opciones.length; i++) {
+    seleccion[i] = opciones[i].checked;
+  }
+
+  // Guardar la selección en localStorage
+  localStorage.setItem('seleccion', JSON.stringify(seleccion));
+}
+
+
+
+
+
+  
+
+function cargarSeleccion() {
+  var seleccion = localStorage.getItem('seleccion');
+
+  if (seleccion) {
+    // Convertir la cadena JSON en un arreglo
+    seleccion = JSON.parse(seleccion);
+
+    // Obtener los botones de selección
+    var opciones = document.querySelectorAll('#nombre .estado input[type="checkbox"] #whatsapp');
+
+    // Establecer el estado de los botones de selección según la selección guardada
+    for (var j = 0; i < opciones.length; j++) {
+      opciones[j].checked = seleccion[j];
+    }
   }
 }
+
+
+document.addEventListener('DOMContentLoaded', function() {
+  cargarSeleccion();
+});
+
+
 
 

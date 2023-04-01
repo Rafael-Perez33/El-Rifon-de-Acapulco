@@ -42,7 +42,7 @@ button:hover {
   background-color: #2c5ca5;
 }
 
-button.seleccionado {
+.btn.active {
   background-color: #f54242;
 }
 
